@@ -12,9 +12,30 @@
         <form action="">
             <label for="txtUsername">Dang Nhap</label>
             <input type="text" name="" id="txtUsername">
-            <label for="txtmatkhau">Mat khau</label>
-            <input type="text" name="" id="txtmatkhau">
+            <label for="txtpassword">password</label>
+            <input type="text" name="" id="txtpassword">
+            <button id="loginBtn">Login</button>
         </form>
     </div>
 </body>
 </html>
+<script>
+    const loginBtn = document.querySelector('#loginBtn');
+    
+    function handleLogin(username, password) {
+        // xu ly dang nhap
+        if(username == 'admin' && password == 'admin') {
+            alert("thanh cong");
+            window.location.href = "dashboard.html";
+        }
+      }
+    
+    loginBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      const username = document.querySelector('#txtUsername').value;
+      const password = document.querySelector('#txtmatkhau').value;
+      handleLogin(username, password);
+      
+    });
+    
+    </script>
